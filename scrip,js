@@ -1,3 +1,10 @@
+// =====================
+// 📦 DATOS DE LOS JUEGOS
+// =====================
+const games = [
+  { name: "Football League 2025", mod: "Dinero ilimitado", tag: "mod", category: "Acción", image: "https://an1.com/uploads/posts/2025-05/1746716117_football-league-2025.png", link: "go:footboll25", sections: ["updated"] },
+  { name: "Fortnite Mobile", mod: "Todo desbloqueado", tag: "mod", category: "Acción", image: "https://an1.com/uploads/posts/2026-01/1767985803_fortnite.png", link: "go:fornite", sections: ["popular", "updated"] },
+  { name: "Stick Cursed: Phantom Fight", category: "Acción", image: "https://an1.com/uploads/posts/2025-12/1764592947_stick-cursed-phantom-fight.png", link: "go:stickpa" },
 
 { name: "My Tiny Tower", category: "simulacion", image: "https://an1.com/uploads/posts/2025-08/1756302405_my-tiny-tower.png", link: "go:tower" },
 { name: "Dam Builder", category: "simulacion", image: "https://an1.com/uploads/posts/2025-07/1751882271_dam-builder.png", link: "go:bam" },
@@ -242,3 +249,229 @@
   { name: "Five Nights at Freddy's 3", category: "terror", image: "https://an1.com/uploads/faoveirn56rty567.png", link: "go:five33" },
   { name: "Five Nights at Freddy's 2", category: "terror", image: "https://an1.com/uploads/posts/2023-10/1696254774_five-nights-at-freddy-2.png", link: "go:five22" },
   { name: "Ultimate Custom Night", category: "terror", image: "https://an1.com/uploads/ultimate45cty5.png", link: "go:ultimatecu" }
+];
+
+// =====================
+// 🏠 PÁGINA PRINCIPAL (index.html)
+// =====================
+if (document.getElementById("updated") || document.getElementById("new") || document.getElementById("popular")) {
+  const sections = {
+    updated: document.getElementById("updated"),
+    new: document.getElementById("new"),
+    popular: document.getElementById("popular")
+  };
+
+  // 🧱 Renderizar solo los juegos con "sections"
+  games.forEach(g => {
+    if (!g.sections) return;
+
+    // 🏷️ Detectar etiqueta MOD o FREE
+    let badge = "";
+    if (g.tag === "mod") badge = '<span class="game-badge">MOD</span>';
+    else if (g.tag === "free") badge = '<span class="game-badge free">FREE</span>';
+
+    // 💬 Burbuja del mod (en vez de la categoría)
+    const modBubble = g.mod ? `<div class="category-bubble-green">${g.mod}</div>` : "";
+
+    g.sections.forEach(sec => {
+      const target = sections[sec];
+      if (target) {
+        const card = document.createElement("a");
+        card.href = g.link;
+        card.className = "game-card";
+        card.innerHTML = `
+          ${badge}
+          <img src="${g.image}" alt="${g.name}">
+          <p>${g.name}</p>
+          ${modBubble}
+        `;
+        target.appendChild(card);
+      }
+    });
+  });
+
+  // 🎮 Menú lateral
+  const menuBtn = document.getElementById("menuBtn");
+  const menu = document.getElementById("menu");
+  if (menuBtn && menu) {
+    menuBtn.addEventListener("click", () => {
+      menu.classList.toggle("open");
+      menuBtn.classList.toggle("open");
+    });
+    document.addEventListener("click", (e) => {
+      if (!menu.contains(e.target) && !menuBtn.contains(e.target)) {
+        menu.classList.remove("open");
+        menuBtn.classList.remove("open");
+      }
+    });
+  }
+
+  // 🔍 Buscador modal
+  const searchIcon = document.getElementById("searchIcon");
+  const searchModal = document.getElementById("searchModal");
+  const searchInput = document.getElementById("modalSearchInput");
+  const searchResults = document.getElementById("searchResults");
+
+  if (searchIcon && searchModal && searchInput && searchResults) {
+    searchIcon.addEventListener("click", () => {
+      searchModal.style.display = "flex";
+      searchInput.focus();
+      showSuggestions();
+    });
+
+    searchModal.addEventListener("click", (e) => {
+      if (e.target === searchModal) {
+        searchModal.style.display = "none";
+        searchResults.innerHTML = "";
+        searchInput.value = "";
+      }
+    });
+
+    searchInput.addEventListener("input", () => {
+      const term = searchInput.value.toLowerCase();
+      if (term.trim() === "") {
+        showSuggestions();
+        return;
+      }
+
+      const filtered = games.filter(g =>
+        g.name.toLowerCase().includes(term) ||
+        (g.category && g.category.toLowerCase().includes(term)) ||
+        (g.mod && g.mod.toLowerCase().includes(term))
+      );
+
+      renderResults(filtered.slice(0, 10), "Resultados de búsqueda 🔍");
+    });
+
+    function showSuggestions() {
+      renderResults(games.slice(0, 5), "🎮 Sugerencias");
+    }
+
+    function renderResults(list, labelText) {
+      searchResults.innerHTML = `<div class="results-bubble">${labelText}</div>`;
+      if (list.length === 0) {
+        searchResults.innerHTML += "<p style='padding:10px;text-align:center;color:#999;'>Sin resultados...</p>";
+        return;
+      }
+
+      list.forEach(g => {
+        const item = document.createElement("div");
+        item.className = "result-item";
+
+        // 🏷️ Etiqueta MOD/FREE
+        let tagHTML = "";
+        if (g.tag === "mod") tagHTML = `<div class="tag-bubble mod">MOD</div>`;
+        else if (g.tag === "free") tagHTML = `<div class="tag-bubble free">FREE</div>`;
+
+        // 💬 Burbujas del mod (verde-azul) y categoría (roja)
+        const modBubble = g.mod ? `<div class='category-bubble-green'>${g.mod}</div>` : "";
+        const categoryBubble = g.category ? `<div class='category-bubble-red'>${g.category}</div>` : "";
+
+        item.innerHTML = `
+          <img src="${g.image}">
+          <div class='result-info'>
+            <strong>${g.name}</strong>
+            <div class="bubble-row">
+              ${modBubble}
+              ${categoryBubble}
+              ${tagHTML}
+            </div>
+          </div>`;
+        item.onclick = () => window.location.href = g.link;
+        searchResults.appendChild(item);
+      });
+    }
+  }
+}
+
+// =====================
+// 🌐 PÁGINA TODOS LOS JUEGOS (todos.html)
+// =====================
+document.addEventListener("DOMContentLoaded", () => {
+  const grid = document.getElementById("gamesGrid");
+  if (!grid) return;
+
+  const searchInput = document.getElementById("searchInput");
+  const filterBtn = document.getElementById("filterBtn");
+  const filterModal = document.getElementById("filterModal");
+  const filterList = document.getElementById("filterList");
+  const closeFilter = document.getElementById("closeFilter");
+
+  let activeCategory = null;
+  const categories = [...new Set(games.map(g => g.category))];
+
+  function renderGames(list) {
+    grid.innerHTML = "";
+    if (list.length === 0) {
+      grid.innerHTML = `<p style="grid-column:1/-1;text-align:center;color:#999;">No se encontraron juegos...</p>`;
+      return;
+    }
+
+    list.forEach(g => {
+      let badge = "";
+      if (g.tag === "mod") badge = '<span class="game-badge">MOD</span>';
+      else if (g.tag === "free") badge = '<span class="game-badge free">FREE</span>';
+
+      const card = document.createElement("a");
+      card.href = g.link;
+      card.className = "game-card";
+      card.innerHTML = `
+        ${badge}
+        <img src="${g.image}" alt="${g.name}">
+        <div class="game-info">
+          <div class="game-name" title="${g.name}">${g.name}</div>
+          <div class="game-category">${g.category}</div>
+        </div>`;
+      grid.appendChild(card);
+    });
+  }
+
+  function applyFilters() {
+    const term = searchInput?.value.toLowerCase() || "";
+    let filtered = games;
+
+    if (activeCategory) {
+      filtered = filtered.filter(g => g.category === activeCategory);
+    }
+
+    if (term.trim() !== "") {
+      filtered = filtered.filter(
+        g =>
+          g.name.toLowerCase().includes(term) ||
+          (g.category && g.category.toLowerCase().includes(term)) ||
+          (g.mod && g.mod.toLowerCase().includes(term))
+      );
+    }
+
+    renderGames(filtered);
+  }
+
+  renderGames(games);
+
+  if (searchInput) {
+    searchInput.addEventListener("input", applyFilters);
+  }
+
+  if (filterBtn && filterModal && closeFilter && filterList) {
+    filterBtn.addEventListener("click", () => {
+      filterModal.style.display = "flex";
+    });
+
+    closeFilter.addEventListener("click", () => {
+      filterModal.style.display = "none";
+      activeCategory = null;
+      applyFilters();
+    });
+
+    categories.forEach(cat => {
+      const btn = document.createElement("button");
+      btn.textContent = cat;
+      btn.addEventListener("click", () => {
+        activeCategory = cat;
+        filterModal.style.display = "none";
+        applyFilters();
+      });
+      filterList.appendChild(btn);
+    });
+  }
+});
