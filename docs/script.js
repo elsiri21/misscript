@@ -1,0 +1,477 @@
+// =====================
+// 📦 DATOS DE LOS JUEGOS
+// =====================
+const games = [
+  { name: "Football League 2025", mod: "Dinero ilimitado", tag: "mod", category: "Acción", image: "https://an1.com/uploads/posts/2025-05/1746716117_football-league-2025.png", link: "go:footboll25", sections: ["updated"] },
+  { name: "Fortnite Mobile", mod: "Todo desbloqueado", tag: "mod", category: "Acción", image: "https://an1.com/uploads/posts/2026-01/1767985803_fortnite.png", link: "go:fornite", sections: ["popular", "updated"] },
+  { name: "Stick Cursed: Phantom Fight", category: "Acción", image: "https://an1.com/uploads/posts/2025-12/1764592947_stick-cursed-phantom-fight.png", link: "go:stickpa" },
+
+{ name: "My Tiny Tower", category: "simulacion", image: "https://an1.com/uploads/posts/2025-08/1756302405_my-tiny-tower.png", link: "go:tower" },
+{ name: "Dam Builder", category: "simulacion", image: "https://an1.com/uploads/posts/2025-07/1751882271_dam-builder.png", link: "go:bam" },
+{ name: "Dragon City", category: "estrategia", image: "https://an1.com/uploads/posts/2024-10/1729852081_dragon-city.png", link: "go:city" },
+{ name: "Chaves Nightmares", category: "terror", image: "https://panelgamelink.neocities.org/%20One%20Pump%20Chump/Chaves-Nightmares.webp", link: "go:chaves" },
+{ name: "Five Nights in Anime", category: "terror", image: "https://panelgamelink.neocities.org/%20One%20Pump%20Chump/fnia-apk-1.webp", link: "go:fnafca1" },
+
+  { name: "Merge Master", category: "estrategia", image: "https://an1.com/uploads/posts/2022-12/1671917646_merge-master.png", link: "go:mergem"},
+{ name: "Five Nights in Anime 2", category: "terror", image: "https://panelgamelink.neocities.org/%20One%20Pump%20Chump/fnia-2.webp", link: "go:fnafa2" },
+{ name: "I The One", category: "accion", image: "https://an1.com/uploads/posts/2025-05/1746986568_i-the-one.png", link: "go:ione" },
+{ name: "Temple Run", category: "aventura", image: "https://an1.com/uploads/posts/2023-05/1683991991_temple-run.png", link: "go:templerun" },
+{ name: "I Am Cat", category: "simulacion", image: "https://an1.com/uploads/posts/2025-10/1761226671_i-am-cat.png", link: "go:iamcat" },
+
+  { name: "Grow Castle", category: "estrategia", image: "https://an1.com/uploads/posts/2023-06/1686823751_grow-castle.png", link: "go:growcas" },
+  { name: "Frost World", category: "aventura", image: "https://an1.com/uploads/posts/2025-11/1762428051_frost-world.png", link: "go:frost" },
+  { name: "Rope Hero: Mafia City Wars", category: "accion", image: "https://an1.com/uploads/posts/2022-12/1672318872_mafia-city-wars.jpg", link: "go:ropeher2" },
+  { name: "Spider Fighter 3", category: "accion", image: "https://an1.com/uploads/posts/2023-09/1695804770_spider-fighter-3.png", link: "go:spider3" },
+  { name: "Plants vs. Zombies", category: "estrategia", image: "https://an1.com/uploads/posts/2022-10/1665416184_plants-vs-zombies.png", link: "go:pvz" },
+  { name: "Rope Hero: Vice Town", category: "accion", image: "https://an1.com/uploads/posts/2023-05/1683973393_rope-hero-vice-town.jpg", link: "go:ropehero" },
+  { name: "DEAD TRIGGER 2", category: "accion", image: "https://an1.com/uploads/posts/2024-05/1715277959_dead-trigger-2.jpg", link: "go:deadt2" },
+  { name: "Red Dead Redemption", category: "aventura", image: "https://liteapks.com/wp-content/uploads/2025/12/red-dead-redemption-netflix-150x150.webp", link: "go:reddead" },
+  { name: "Street Racing 3D", category: "carreras", image: "https://an1.com/uploads/posts/2023-08/1692960485_street-racing-3d.jpg", link: "go:street" },
+  { name: "Hollow Knight: Silksong", category: "carreras", image: "https://an1.com/uploads/posts/2025-10/1761074303_hollow-knight-silksong.png", link: "go:hallow2" },
+  { name: "Royal Match", category: "Rompecabezas", image: "https://an1.com/uploads/posts/2023-06/1687873461_royal-match.png", link: "go:royalm" },
+  { name: "I Am Monkey?", category: "simulacion", image: "https://an1.com/uploads/posts/2025-11/1763806521_i-am-monkey.png", link: "go:mokey" },
+  { name: "Car Race 3D", category: "carreras", image: "https://an1.com/uploads/posts/2024-09/1726483280_car-race-3d.png", link: "go:carrace3d" },
+  { name: "Roblox", category: "aventura", image: "https://espacioapk.com/wp-content/uploads/2025/01/ROBLOX-APK.webp", link: "go:roblox" },
+  { name: "Fashion Show", category: "simulacion", image: "https://an1.com/uploads/posts/2024-11/1732561769_fashion-show.png", link: "go:fashion" },
+  { name: "Wood Nuts & Bolts Puzzle", category: "Rompecabezas", image: "https://an1.com/uploads/posts/2024-03/1711225716_wood-nuts.png", link: "go:wood" },
+  { name: "Flight Pilot: 3D Simulator", category: "simulacion", image: "https://an1.com/uploads/posts/2023-05/1683111717_flight-pilot-3d-sim.png", link: "go:flightp" },
+  { name: "Farm Town", category: "simulacion", image: "https://an1.com/uploads/posts/2025-08/1756159245_farm-town.jpg", link: "go:farm" },
+  { name: "Power Warriors", category: "carreras", image: "https://espacioapk.com/wp-content/uploads/2024/09/power-warriors-android.webp", link: "go:power" },
+  { name: "Extreme Motorcycle Simulator", category: "carreras", image: "https://an1.com/uploads/posts/2025-09/1758819216_extreme-motorcycle-simulator.png", link: "go:motorc" },
+  { name: "Last Day on Earth", category: "accion", image: "https://an1.com/uploads/posts/2023-05/1683145894_last-day.png", link: "go:lastday" },
+  { name: "Epic Battle Simulator 2", category: "arcade", image: "https://an1.com/uploads/posts/2023-05/1684838008_epic-battle-sim-2.png", link: "go:epicbattle" },
+  { name: "Rush Rally 3", category: "carreras", image: "https://an1.com/uploads/posts/2025-08/1755028892_rush-rally-3.png", link: "go:rally3" },
+{ name: "Space Shooter - Galaxy Attack", category: "arcade", image: "https://an1.com/uploads/posts/2023-07/1688569107_space-shooter.png", link: "go:spaceshote" },
+{ name: "DEAD TARGET: Zombie", category: "accion", image: "https://an1.com/uploads/posts/2023-09/1694175557_dead-target-zombie.jpg", link: "go:deadtarget" },
+{ name: "Plague Inc.", category: "simulacion", image: "https://an1.com/uploads/posts/2022-03/1647557059_plagueinc.jpg", link: "go:plaguein" },
+{ name: "Block Craft 3D", category: "arcade", image: "https://an1.com/uploads/posts/2023-05/1683369092_block-craft-3d.png", link: "go:blockcraft" },
+{ name: "Swamp Attack", category: "accion", image: "https://an1.com/uploads/posts/2024-10/1729607912_swamp-attack.png", link: "go:swampatac1" },
+{ name: "Hill Climb Racing 2", category: "carreras", image: "https://an1.com/uploads/hcr3tyijhntyj.png", link: "go:hillc2" },
+{ name: "Car Saler Simulator Dealership", category: "simulacion", image: "https://an1.com/uploads/posts/2023-12/1703945601_car-saler-simulator-dealership.jpg", link: "go:cars" },
+{ name: "Epic Plane Evolution", category: "accion", image: "https://an1.com/uploads/posts/2025-11/1762431652_epic-plane-evolution.png", link: "go:epic" },
+{ name: "Incredibox", category: "musica", image: "https://an1.com/uploads/posts/2023-03/1677929689_incredibox.png", link: "go:incredibox" },
+{ name: "Minecraft", category: "arcade", image: "https://an1.com/uploads/posts/2024-09/1727348015_minecraft.png", link: "go:minecraft" },
+{ name: "I Am Security", category: "juegoderol", image: "https://an1.com/uploads/posts/2025-03/1742048070_i-am-security.png", link: "go:iam" },
+{ name: "Truck Simulator Big Rigs", category: "simulacion", image: "https://an1.com/uploads/posts/2025-08/1755334498_truck-simulator-big-rigs.png", link: "go:truckbig" },
+{ name: "Universal Truck Simulator", category: "simulacion", image: "https://an1.com/uploads/posts/2023-12/1702675954_universal-truck-sim.png", link: "go:univtruck" },
+{ name: "Hunting Simulator 4x4", category: "accion", image: "https://an1.com/uploads/posts/2025-08/1756027050_hunting-simulator-4x4.png", link: "go:hunting" },
+{ name: "Garena Free Fire MAX", category: "accion", image: "https://an1.com/uploads/posts/2025-10/1761723966_free-fire-max.png", link: "go:freemax" },
+{ name: "The Escapists: Prison Escape", category: "estrategia", image: "https://liteapks.com/wp-content/uploads/2023/04/the-escapists-prison-escape-150x150.jpg", link: "go:escape" },
+{ name: "Dead Ahead: Zombie Warfare", category: "estrategia", image: "https://an1.com/uploads/posts/2025-05/1747826179_dead-ahead-zombie-warfare.png", link: "go:deadhead" },
+{ name: "Mini juegos", category: "accion", image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj37pNBdLTw0Fke7reTykEzioLSiI9vRET_u5o4qjxoIHZM64YE1ab3jMuZASuUAxlI8pxeCPBlK_2xjyB1qmiXhM-M3ZRMaiqwJ5QvBqL_ztLBpAPfKzNdSqVNx9_owFvexTNtSciimoDXitYGHMCpKzrD837jlj0NhVWC92uuBJ7Ii3eE7lWPgxQ7DHc/s1600/icono%20correct.jpg", link: "go:minijuego" },
+{ name: "KUBOOM", category: "accion", image: "https://liteapks.com/wp-content/uploads/2022/06/kuboom-3d-fps-shooter-150x150.png", link: "go:kuboom" },
+{ name: "Hitman Sniper", category: "accion", image: "https://an1.com/uploads/posts/2023-09/1694033534_hitman-sniper.jpg", link: "go:hitmasns" },
+{ name: "Hallow Knight", category: "accion", image: "https://liteapks.com/wp-content/uploads/2025/09/hollow-knight-1-150x150.png", link: "go:hallow" },
+{ name: "Dead Force", category: "accion", image: "https://an1.com/uploads/posts/2025-09/1759146709_dead-force.png", link: "go:force" },
+{ name: "Shadow of Death: Dark Knight", category: "accion", image: "https://an1.com/uploads/posts/2022-01/1643106634_shadowofdeath.png", link: "go:shadow22" },
+{ name: "Shadow Knight", category: "accion", image: "https://an1.com/uploads/posts/2024-07/1721208786_shadow-knight.png", link: "go:ShadowKni" },
+{ name: "Imposter Battle Royale", category: "accion", image: "https://an1.com/uploads/posts/2025-02/1740253524_imposter-battle-royale.png", link: "go:imposter" },
+{ name: "Hono Truck", category: "accion", image: "https://modhello.io/wp-content/uploads/2025/10/hono-truck-icon.webp", link: "go:hono" },
+{ name: "Blades of Brim", category: "accion", image: "https://an1.com/uploads/posts/2022-02/1644788600_blades-of-brim.jpg", link: "go:bladesbrim" },
+{ name: "Zombie Apocalypse", category: "accion", image: "https://an1.com/uploads/posts/2025-06/1750672090_zombie-apocalypse.png", link: "go:zombiead" },
+{ name: "Truck Simulator PRO US", category: "simulacion", image: "https://liteapks.com/wp-content/uploads/2023/08/truck-simulator-pro-usa-150x150.jpg", link: "go:truck" },
+{ name: "Earn to Die 2", category: "accion", image: "https://an1.com/uploads/posts/2025-07/1753947087_earn-to-die-2.png", link: "go:etd2" },
+{ name: "Bring You Home", category: "rompecabezas", image: "https://liteapks.com/wp-content/uploads/2024/10/bring-you-home-150x150.webp", link: "go:bring" },
+{ name: "Prison Escape Journey", category: "accion", image: "https://an1.com/uploads/posts/2025-09/1757769274_prison-escape-journey.png", link: "go:prison" },
+{ name: "CarX Drift Racing 2", category: "carreras", image: "https://an1.com/uploads/posts/2023-05/1683877186_carx-drift-racing-2.png", link: "go:carx2" },
+{ name: "Stick Shinobi Fighting", category: "accion", image: "https://an1.com/uploads/posts/2025-01/1737984603_stick-shinobi-fighting.png", link: "go:stickshino" },
+{ name: "Call of Mini: Zombies", category: "accion", image: "https://an1.com/uploads/posts/2016-07/1468232706_converted_file_382b3e16.jpg", link: "go:callofmini" },
+{ name: "Subnautica", category: "aventura", image: "https://an1.com/uploads/posts/2025-07/1752082124_subnautica.png", link: "go:Subnautica" },
+{ name: "Hill Climb Racing", category: "carreras", image: "https://an1.com/uploads/posts/2023-03/1680100711_hill-climb-racing.png", link: "go:hillclimb" },
+{ name: "PC Creator 2", category: "simulacion", image: "https://an1.com/uploads/posts/2023-01/1674856981_pc-creator-2.png", link: "go:pccreator2" },
+{ name: "My Perfect Hotel", category: "arcade", image: "https://an1.com/uploads/posts/2025-09/1756741084_my-perfect-hotel.png", link: "go:hotelper" },
+{ name: "Shoujo City 3D", category: "simulacion", image: "https://an1.com/uploads/posts/2024-08/1723297335_shoujo-city-3d.png", link: "go:fire3d" },
+{ name: "Zombie Fire 3D", category: "accion", image: "https://an1.com/uploads/posts/2025-06/1750775315_zombie-fire-3d.png", link: "go:fire3d" },
+{ name: "OTR - Offroad Car Driving Game", category: "aventura", image: "https://an1.com/uploads/posts/2023-06/1686567882_off-the-road.jpg", link: "go:otr" },
+{ name: "Ninja Arashi 2", category: "aventura", image: "https://an1.com/uploads/posts/2023-08/1692713770_ninja-arashi-2.jpg", link: "go:ninja2" },
+{ name: "RFS - Real Flight Simulator", category: "simulacion", image: "https://an1.com/uploads/posts/2023-04/1682418969_rfs.jpg", link: "go:rfsreal" },
+{ name: "Bus Simulator: Ultimate", category: "simulacion", image: "https://an1.com/uploads/busismir4tmn45645.png", link: "go:buss" },
+{ name: "TABS Pocket Edition", category: "simulacion", image: "https://liteapks.com/wp-content/uploads/2025/08/tabs-pocket-edition-150x150.webp", link: "go:tabs" },
+{ name: "Car For Sale Simulator 2023", category: "simulacion", image: "https://an1.com/uploads/posts/2025-05/1747643636_car-for-sale-simulator-2023.png", link: "go:carforsale" },
+{ name: "Subway Surfers", category: "arcade", image: "https://an1.com/uploads/posts/2025-08/1755501676_subway-surfers.png", link: "go:subwaysurf" },
+{ name: "Drift Max Pro", category: "carreras", image: "https://an1.com/uploads/posts/2024-03/1711747849_drift-max-pro.png", link: "go:drifmaxpro" },
+{ name: "Real Steel World Robot Boxing", category: "accion", image: "https://an1.com/uploads/posts/2025-02/1739889524_world-robot-boxing.png", link: "go:realteelw" },
+{ name: "Real Gangster Crime", category: "accion", image: "https://an1.com/uploads/posts/2023-04/1682535536_real-gangster-crime.jpg", link: "go:realcrime" },
+{ name: "FL Studio Mobile", category: "musicayaudio", image: "https://liteapks.com/wp-content/uploads/2022/05/fl-studio-mobile-150x150.png", link: "go:flstudio" },
+{ name: "Vector", category: "arcade", image: "https://an1.com/uploads/posts/2025-04/1745229646_vector.png", link: "go:vector" },
+{ name: "Taxi Car Simulator: EVO", category: "simulacion", image: "https://an1.com/uploads/posts/2025-05/1746866138_taxi-car-simulator-evo.png", link: "go:taxievo" },
+{ name: "Sky Streaker", category: "casual", image: "https://espacioapk.com/wp-content/uploads/2025/07/unnamed-5.webp", link: "go:sky" },
+{ name: "Marge Fellas", category: "casual", image: "https://an1.com/uploads/posts/2025-07/1752257315_merge-fellas.png", link: "go:merge" },
+{ name: "Deltarune", category: "aventura", image: "https://espacioapk.com/wp-content/uploads/2024/07/deltarune-apk.webp", link: "go:deltarun" },
+{ name: "My Cruise", category: "aventura", image: "https://an1.com/uploads/posts/2024-09/1725879546_my-cruise.png", link: "go:cruise" },
+  { name: "Plants vs Zombies: Hybrid", category: "aventura", image: "https://espacioapk.com/wp-content/uploads/2024/10/icon_foreground-1-1.webp", link: "go:pvzhybri" },
+  { name: "Plants vs. Zombies: Legend", category: "aventura", image: "https://espacioapk.com/wp-content/uploads/2024/10/PVZ-Legend-APK.webp", link: "go:pvzlegen" },
+  { name: "Plants vs Zombies: Shooting", category: "aventura", image: "https://espacioapk.com/wp-content/uploads/2024/10/pvz2-Reflourished-apk.webp", link: "go:pvzshoo" },
+  { name: "Plants vs Zombies 2: Reflourished", category: "aventura", image: "https://espacioapk.com/wp-content/uploads/2024/10/pvz2-Reflourished-apk.webp", link: "go:pvzref" },
+  { name: "Hollow Knigth: Silkson", category: "aventura", image: "https://espacioapk.com/wp-content/uploads/2025/03/Proyecto-nuevo.webp", link: "go:hollow" },
+  { name: "Simulator Perang Sarung 3D", category: "aventura", image: "https://an1.com/uploads/posts/2025-03/1742762164_simulator-perang-sarung-3d.png", link: "go:perang" },
+  { name: "R.E.P.O. Mobile", category: "aventura", image: "https://an1.com/uploads/posts/2025-04/1744284176_r_e_p_o_-mobile.png", link: "go:repo" },
+  { name: "STAR WARS: KOTOR II", category: "aventura", image: "https://an1.com/uploads/posts/2024-11/1732386155_star-wars-kotor-ii.png", link: "go:kotorll" },
+  { name: "Spotify x", category: "musicayaudio", image: "https://espacioapk.com/wp-content/uploads/2023/10/spotify.webp", link: "go:Spotifyx" },
+  { name: "Looney Tunes Dash", category: "casual", image: "https://espacioapk.com/wp-content/uploads/2025/05/Looney-Tunes-Dash-apk.webp", link: "go:looneyt" },
+  { name: "Hungry Shark World", category: "casual", image: "https://espacioapk.com/wp-content/uploads/2023/11/Hungry-Shark-World-Dinero-infinito.webp", link: "go:sharworld" },
+  { name: "Pixel Car Racer", category: "carreras", image: "https://an1.com/uploads/posts/2022-04/1650981988_pixel-car-racer.png", link: "go:pixercar" },
+  { name: "FNaF 9: Security Breach", category: "terror", image: "https://espacioapk.com/wp-content/uploads/2023/11/FNaF-Security-Breach-APK.webp", link: "go:fanfsecuri" },
+  { name: "Five Nights at Candy’s 3", category: "terror", image: "https://espacioapk.com/wp-content/uploads/2024/01/fnac-3-apk.webp", link: "go:fnafca3" },
+  { name: "Five Nights at Candy’s 2", category: "terror", image: "https://espacioapk.com/wp-content/uploads/2024/01/FNAC-2-APK.webp", link: "go:fnafca2" },
+  { name: "Five Nights at Candy’s", category: "terror", image: "https://espacioapk.com/wp-content/uploads/2024/01/fnac-apk.webp", link: "go:fnafca" },
+  { name: "Car Parking Multiplayer", category: "simulacion", image: "https://an1.com/uploads/posts/2022-02/1643800246_car-parking-multiplayer.jpg", link: "go:carparkin" },
+  { name: "Plants vs. Zombies Reborn", category: "estrategia", image: "https://espacioapk.com/wp-content/uploads/2024/10/pvz-reborn-para-android.webp", link: "go:pvzre" },
+  { name: "Plants vs. Zombies 3", category: "estrategia", image: "https://espacioapk.com/wp-content/uploads/2023/03/Plants-vs.-Zombies-3-APK.webp", link: "go:pvz3" },
+  { name: "Plants vs. Zombies", category: "estrategia", image: "https://an1.com/uploads/posts/2022-10/1665416184_plants-vs-zombies.png", link: "go:pvz" },
+  { name: "Plants vs Zombies Realista", category: "estrategia", image: "https://espacioapk.com/wp-content/uploads/2025/03/Proyecto-nuevo-67.webp", link: "go:pvzr" },
+  { name: "Five Nights at Freddy's", category: "terror", image: "https://an1.com/uploads/posts/2023-10/1696245714_fnaf.png", link: "go:five1" },
+  { name: "Plants vs Zombies 2", category: "simulacion", image: "https://espacioapk.com/wp-content/uploads/2022/08/plantas-vs-zombies-mod-apk-min.png", link: "go:pvz2" },
+  { name: "Fall Guys", category: "casual", image: "https://espacioapk.com/wp-content/uploads/2024/08/fall-guys-android.png", link: "go:fallguys" },
+  { name: "drivers jobs online simulator", category: "simulacion", image: "https://image.winudf.com/v2/image1/Y29tLmR5bmFtaWNnYW1lcy5kcml2ZXJzam9ic29ubGluZXNpbXVsYXRvcl9pY29uXzE2NTMzMzI1MjhfMDgz/icon.webp?w=140&fakeurl=1&type=.webp", link: "go:drivers" },
+  { name: "Angry Birds Transformers", category: "arcade", image: "https://an1.com/uploads/posts/2023-05/1684330368_angry-birds-transformers.png", link: "go:angrytrans" },
+  { name: "Clash of Clans", category: "estrategia", image: "https://espacioapk.com/wp-content/uploads/2023/08/Clash-of-Clans-Mod-APK.webp", link: "go:clashof" },
+  { name: "Playhub+", category: "entretenimiento", image: "https://espacioapk.com/wp-content/uploads/2023/04/playhub-plus-apk.webp", link: "go:playhub" },
+  { name: "VideoShow Pro", category: "aplicacionesdevideo", image: "https://espacioapk.com/wp-content/uploads/2022/07/descargar-videoshow-pro-apk-min.png", link: "go:vivashow" },
+  { name: "VivaVideo Pro", category: "aplicacionesdevideo", image: "https://espacioapk.com/wp-content/uploads/2024/09/VivaVideo-Pro-APK.webp", link: "go:vivavi" },
+  { name: "KineMaster Pro", category: "aplicacionesdevideo", image: "https://espacioapk.com/wp-content/uploads/2023/05/kinemaste-pro-apk.webp", link: "go:kinema" },
+  { name: "GoPro Quik", category: "aplicacionesdevideo", image: "https://espacioapk.com/wp-content/uploads/2023/10/GoPro-Quik-Mod-APK.webp", link: "go:quik" },
+  { name: "VN Premium", category: "aplicacionesdevideo", image: "https://espacioapk.com/wp-content/uploads/2022/11/vn-editor-de-video.png", link: "go:vn" },
+  { name: "Jurassic World: the game", category: "arcade", image: "https://liteapks.com/wp-content/uploads/2022/07/jurassic-world-the-game-150x150.jpg", link: "go:jurassicwl" },
+  { name: "Cuphead mobile", category: "aventura", image: "https://espacioapk.com/wp-content/uploads/2023/06/cuphead-apk-1.jpg", link: "go:cuphead" },
+  { name: "vegas crime simulator 2", category: "accion", image: "https://an1.com/uploads/posts/2022-02/1645094483_vegas-crime-simulator-2.jpg", link: "go:vegas2" },
+  { name: "Stick War: Legacy", category: "estrategia", image: "https://an1.com/uploads/posts/2023-05/1684229427_stick-war-legacy.png", link: "go:stickwar" },
+  { name: "Tank Stars", category: "arcade", image: "https://an1.com/uploads/posts/2023-06/1685646762_tank-stars.png", link: "go:tanks" },
+  { name: "Stick Demon Shadow Fight", category: "accion", image: "https://espacioapk.com/wp-content/uploads/2025/02/Stick-Demon-Shadow-Fight-Dinero-infinito.webp", link: "go:stickdemo" },
+  { name: "Hunter Assassin", category: "accion", image: "https://an1.com/uploads/posts/2024-04/1713356969_hunter-assassin.png", link: "go:hasassin" },
+  { name: "Manage Supermarket Simulator", category: "simulacion", image: "https://an1.com/uploads/posts/2024-06/1717920759_manage-supermarket-simulator.jpg", link: "go:market" },
+  { name: "Geometry Dash", category: "arcade", image: "https://an1.com/uploads/posts/2023-12/1703084045_geometry-dash.png", link: "go:geometry" },
+  { name: "capcut pro", category: "herramientas", image: "https://espacioapk.com/wp-content/uploads/2024/08/capcut-apk-1.png", link: "go:capcutp" },
+  { name: "Newpipe", category: "herramientas", image: "https://espacioapk.com/wp-content/uploads/2023/05/newpipe-apk-1-1.png", link: "go:newpipe" },
+  { name: "Duolingo Plus", category: "aprendisaje", image: "https://espacioapk.com/wp-content/uploads/2024/04/duolingo-plus-apk.webp", link: "go:doulin" },
+  { name: "Human Fall Flat", category: "estrategia", image: "https://an1.com/uploads/posts/2023-06/1686411776_human-fall-flat.png", link: "go:human" },
+  { name: "Terraria", category: "aventura", image: "https://an1.com/uploads/posts/2023-09/1695859322_terraria.png", link: "go:terraria" },
+  { name: "Poppy Playtime Chapter 4", category: "terror", image: "https://espacioapk.com/wp-content/uploads/2025/02/poppy-playtime-4-apk-.webp", link: "go:poppy4" },
+  { name: "Stick War saga", category: "estrategia", image: "https://an1.com/uploads/posts/2024-03/1709978169_stick-war-3.png", link: "go:stickwar3" },
+  { name: "Pick me up - idle", category: "casual", image: "https://image.winudf.com/v2/image1/Y29tLmhpYm94LnBpY2ttZXVwaWRsZWdhbWVfaWNvbl8xNzI0OTcwNDQxXzAxNw/icon.webp?w=140&fakeurl=1&type=.webp", link: "go:pickme" },
+  { name: "Stickman Warriors", category: "accion", image: "https://an1.com/uploads/posts/2023-06/1686827847_stickman-warriors.png", link: "go:stickmanw" },
+  { name: "Little Nightmares", category: "aventura", image: "https://an1.com/uploads/posts/2023-12/1703095752_little-nightmares.png", link: "go:littlen" },
+  { name: "Real Steel Boxing Champions", category: "accion", image: "https://an1.com/uploads/posts/2023-04/1682631859_real-steel-boxing-champions.png", link: "go:RealSteelc" },
+  { name: "Into the Dead 2", category: "accion", image: "https://an1.com/uploads/posts/2022-03/1646843579_intothedead2.png", link: "go:intodead2" },
+  { name: "Marvel’s Spider Man Mobile", category: "accion", image: "https://liteapks.com/wp-content/uploads/2022/08/spider-man-1-150x150.jpeg", link: "go:spidermo" },
+  { name: "Stiker.ly", category: "herramientas", image: "https://liteapks.com/wp-content/uploads/2023/02/sticker-ly-sticker-maker-150x150.jpg", link: "go:stiker" },
+  { name: "State.io", category: "estrategia", image: "https://cdn.juegosarea.com/st/at/state-io-conquer-the-world-d.jpg?width=200&height=200&aspect_ratio=1:1", link: "go:state" },
+  { name: "Plants vs. Zombies Fusion", category: "estrategia", image: "https://an1.com/uploads/posts/2024-11/1731006777_pvz-fusion.png", link: "go:pvzfus" },
+  { name: "APEX Racer", category: "carreras", image: "https://an1.com/uploads/posts/2024-01/1706205145_apex-racer.png", link: "go:apexr2" },
+  { name: "Mad Skills BMX 2", category: "carreras", image: "https://an1.com/uploads/posts/2023-06/1687877900_mad-skills-bmx-2.png", link: "go:madskibl2" },
+  { name: "World War Polygon", category: "accion", image: "https://an1.com/uploads/posts/2023-02/1676562207_world-war-en.png", link: "go:WorldWar" },
+  { name: "Obama", category: "casual", image: "https://espacioapk.com/wp-content/uploads/2024/12/obama.webp", link: "go:obama" },
+  { name: "Stardew Valley", category: "juegoderol", image: "https://an1.com/uploads/posts/2023-09/1694252952_stardew-valley.png", link: "go:stardew" },
+  { name: "My Talking Tom", category: "casual", image: "https://an1.com/uploads/posts/2023-05/1683639180_my-talking-tom.png", link: "go:talktom" },
+  { name: "Spider Fighter 2", category: "accion", image: "https://an1.com/uploads/posts/2023-06/1686828232_spider-fighter-2.png", link: "go:spiderf2" },
+  { name: "Talking Tom Hero Dash", category: "accion", image: "https://an1.com/uploads/posts/2023-04/1681123891_talking-tom-hero-dash.png", link: "go:talkintoda" },
+  { name: "Hungry Shark Evolution", category: "arcade", image: "https://an1.com/uploads/posts/2023-02/1676286237_hungry-shark-evolution.png", link: "go:hungryshar" },
+  { name: "Kawaii Animes", category: "entre", image: "https://espacioapk.com/wp-content/uploads/2023/02/kawaii-animes-apk-min.png", link: "go:kawaii" },
+  { name: "Real Boxing 2", category: "deporte", image: "https://an1.com/uploads/posts/2024-01/1705438686_real-boxing-2.png", link: "go:realboxin2" },
+  { name: "Silent Castle", category: "terror", image: "https://image.winudf.com/v2/image1/Y29tLnF4Z2FtZS5zaWxlbnRjYXN0bGVfaWNvbl8xNjQ3NTkyODk0XzA5Nw/icon.webp?w=140&fakeurl=1&type=.webp", link: "go:silent" },
+  { name: "Racing in Car 2021", category: "carreras", image: "https://an1.com/uploads/posts/2023-05/1683026208_racing-in-car-2021.jpg", link: "go:racingin" },
+  { name: "Matchington Mansion", category: "rompecabezas", image: "https://an1.com/uploads/posts/2023-07/1689672013_matchington-mansion.png", link: "go:Matchingt" },
+  { name: "Extreme Car Driving Simulator", category: "carreras", image: "https://an1.com/uploads/posts/2022-02/1645044347_extremecardrivingsim.png", link: "go:extremec" },
+  { name: "Cover Fire", category: "accion", image: "https://an1.com/uploads/posts/2023-06/1686328890_cover-fire.jpg", link: "go:coverfire" },
+  { name: "Sniper 3D Fun Free Online FPS", category: "accion", image: "https://an1.com/uploads/posts/2023-04/1682629437_sniper-3d.jpg", link: "go:sniper3D" },
+  { name: "Alien Invasion", category: "arcade", image: "https://an1.com/uploads/posts/2023-10/1698666199_alien-invasion.png", link: "go:alieninva" },
+  { name: "Mad Skills Motocross 3", category: "carres", image: "https://an1.com/uploads/posts/2022-03/1647015795_mad-skills-motocross-3.jpg", link: "go:motocross3" },
+  { name: "Traffic Rider", category: "carres", image: "https://an1.com/uploads/posts/2023-10/1696838060_traffic-rider.jpg", link: "go:traficride" },
+  { name: "Car Trader Simulator", category: "simulacion", image: "https://an1.com/uploads/posts/2024-02/1708452259_car-for-trade.jpg", link: "go:carfor" },
+  { name: "Raft Survival Ocean Nomad", category: "aventura", image: "https://an1.com/uploads/posts/2023-05/1685532136_ocean-nomad.jpg", link: "go:RaftSurvi" },
+  { name: "Rent Please!", category: "simulacion", image: "https://an1.com/uploads/posts/2023-06/1687171537_rent-please.png", link: "go:rentp" },
+  { name: "Ship Simulator", category: "simulacion", image: "https://an1.com/uploads/posts/2024-04/1712915826_ship-simulator.png", link: "go:shipsimu" },
+  { name: "Stick War: Legacy", category: "estrategia", image: "https://an1.com/uploads/posts/2023-05/1684229427_stick-war-legacy.png", link: "go:stickwar" },
+  { name: "Bus Arrival", category: "simulacion", image: "https://an1.com/uploads/posts/2023-12/1704019849_bus-arrival.png", link: "go:busarri" },
+  { name: "Racing Fever: Moto", category: "carreras", image: "https://an1.com/uploads/posts/2023-06/1687257390_racing-fever-moto.png", link: "go:RacingFev" },
+  { name: "Choices: Stories You Play", category: "simulacion", image: "https://an1.com/uploads/posts/2023-06/1686649502_choices-stories.png", link: "go:ChoiStori" },
+  { name: "Drag Racing", category: "carreras", image: "https://an1.com/uploads/posts/2023-04/1682517559_drag-racing.jpg", link: "go:dragracin" },
+  { name: "Anger of Stick 5", category: "accion", image: "https://an1.com/uploads/posts/2022-12/1672216197_anger-of-stick-5.png", link: "go:stick5" },
+  { name: "Hello Neighbor", category: "aventura", image: "https://an1.com/uploads/posts/2023-05/1685257730_hello-neighbor.jpg", link: "go:helloneig" },
+  { name: "Angry Birds Epic RPG", category: "juegoderol", image: "https://an1.com/uploads/posts/2018-03/1522079582_a.jpg", link: "go:angryep" },
+  { name: "GTA San Andreas: The Definitive Edition", category: "accion", image: "https://espacioapk.com/wp-content/uploads/2023/12/gta-netflix-gta-san-andreas-netflix-gta-netflix-apk.webp", link: "go:gta1d" },
+  { name: "Slime Rancher", category: "simulacion", image: "https://espacioapk.com/wp-content/uploads/2023/06/slime-rancher-apk.webp", link: "go:slimr" },
+  { name: "Grand Theft Auto V", category: "accion", image: "https://espacioapk.com/wp-content/uploads/2022/09/gta-5-apk-gta-v-apk.webp", link: "go:gtav" },
+  { name: "Star Wars: Galaxy of Heroes", category: "juegoderol", image: "https://an1.com/uploads/posts/2023-09/1694594590_star-wars-galaxy-of-heroes.jpg", link: "go:starwg" },
+  { name: "The Walking Zombie 2", category: "accion", image: "https://an1.com/uploads/posts/2022-01/1642508744_thewalkingzombie.png", link: "go:walking2" },
+  { name: "TDS", category: "accion", image: "https://an1.com/uploads/posts/2024-08/1724249421_tds.png", link: "go:tds" },
+  { name: "Worms Zone .io", category: "accion", image: "https://an1.com/uploads/posts/2023-02/1677345667_worms-zone-io.png", link: "go:subway2" },
+  { name: "Subway Surfers City", category: "accion", image: "https://an1.com/uploads/posts/2024-11/1731585747_subway-surfers-city.png", link: "go:subway2" },
+  { name: "Grow Empire Rome", category: "estrategia", image: "https://an1.com/uploads/posts/2023-11/1699629079_grow-empire-rome.png", link: "go:growempire" },
+  { name: "YouTube Music", category: "musicayaudio", image: "https://an1.ca/wp-content/uploads/2024/10/Youtube-music-mod-apk.avif", link: "go:youtum" },
+  { name: "Ace Fighter", category: "simulacion", image: "https://an1.com/uploads/posts/2023-07/1689344303_ace-fighter.png", link: "go:acefigh" },
+  { name: "Zombie Tsunami", category: "arcade", image: "https://an1.com/uploads/posts/2016-06/1466601204_converted_file_c2a9ba57.jpg", link: "go:tzunami" },
+  { name: "Idle Miner Tycoon", category: "simulacion", image: "https://an1.com/uploads/posts/2023-08/1691696735_idle-miner-tycoon.png", link: "go:idleminer" },
+  { name: "Idle Egg Factory", category: "simulacion", image: "https://an1.com/uploads/posts/2024-01/1706134082_idle-egg-factory.png", link: "go:idleegg" },
+  { name: "Temple Run 2", category: "accion", image: "https://an1.com/uploads/posts/2022-04/1650459334_templerun2.jpg", link: "go:templerun2" },
+  { name: "Magic Tiles 3", category: "musica", image: "https://an1.com/uploads/posts/2023-02/1676553599_magic-tiles-3.png", link: "go:magic3" },
+  { name: "Grand Theft Auto: San Andreas", category: "accion", image: "https://an1.com/uploads/posts/2024-08/1723932486_gta-sa.png", link: "go:gtasa" },
+  { name: "Cooking Fever", category: "arcade", image: "https://an1.com/uploads/posts/2023-06/1686151504_cooking-fever.png", link: "go:CookingFe" },
+  { name: "Lamar - Idle Vloggerr", category: "accion", image: "https://an1.com/uploads/posts/2024-07/1721475363_lamar-idle-vlogger.png", link: "go:lamaridle" },
+  { name: "Spaceflight Simulator", category: "simulacion", image: "https://an1.ca/wp-content/uploads/2024/09/Spaceflight-Simulator-MOD-APK.webp", link: "go:spacef" },
+  { name: "Manage Supermarket Simulator", category: "simulacion", image: "https://an1.com/uploads/posts/2024-06/1717920759_manage-supermarket-simulator.jpg", link: "go:market" },
+  { name: "Clothing Store Simulator", category: "simulacion", image: "https://an1.com/uploads/posts/2024-09/1726742104_clothing-store-simulator.png", link: "go:ropashop" },
+  { name: "Idle Bank Tycoon", category: "simulacion", image: "https://an1.com/uploads/posts/2024-01/1705483511_idle-bank-tycoon.png", link: "go:idlban" },
+  { name: "Grand Truck Simulator 2", category: "simulacion", image: "https://an1.com/uploads/posts/2024-09/1725525113_grand-truck-simulator-2.png", link: "go:truck2" },
+  { name: "Stunt Car Extreme", category: "carreras", image: "https://an1.com/uploads/posts/2024-05/1714911005_stunt-car-extreme.jpg", link: "go:stuntcar" },
+  { name: "Project Drift 2.0", category: "carreras", image: "https://an1.com/uploads/posts/2024-01/1705178035_project-drift-20.png", link: "go:drift2.0" },
+  { name: "Farming Simulator 23", category: "simulacion", image: "https://an1.com/uploads/posts/2024-02/1707596453_farming-simulator-23.jpg", link: "go:faming23" },
+  { name: "Stickman The Flash", category: "accion", image: "https://an1.com/uploads/posts/2023-08/1691954195_stickman-the-flash.png", link: "go:stickfla" },
+  { name: "Mob Control", category: "accion", image: "https://an1.com/uploads/posts/2024-03/1709730091_mob-control.png", link: "go:mobcon" },
+  { name: "Poppy Playtime Chapter 3", category: "terror", image: "https://an1.com/uploads/posts/2024-02/1707309487_poppy-playtime-chapter-3.png", link: "go:poppy3" },
+  { name: "Poppy Playtime Chapter 2", category: "terror", image: "https://an1.com/uploads/posts/2022-08/1660636869_poppy-playtime-chapter-2.png", link: "go:poppy2" },
+  { name: "Poppy Playtime Chapter 1", category: "terror", image: "https://an1.com/uploads/posts/2022-06/1654947552_poppy-playtime.png", link: "go:poppy1" },
+  { name: "FNaF 6: Pizzeria Simulator", category: "simulador", image: "https://an1.com/uploads/posts/2024-01/1704188356_fnaf-6.png", link: "go:freddyp" },
+  { name: "jurassic world", category: "simulacion", image: "https://an1.com/uploads/posts/2023-06/1686601111_jurassic-world.png", link: "go:jurassicwl" },
+  { name: "Jetpack Joyride", category: "arcade", image: "https://an1.com/uploads/posts/2023-04/1682504148_jetpack-joyride.png", link: "go:jetpack" },
+  { name: "We Are Warriors!", category: "estrategia", image: "https://an1.com/uploads/posts/2024-01/1706274561_we-are-warriors.png", link: "go:wearew" },
+  { name: "Beach Buggy Racing", category: "carreras", image: "https://an1.com/uploads/posts/2024-10/1728043123_beach-buggy-racing.png", link: "go:beachbugy" },
+  { name: "Little Nightmares", category: "aventura", image: "https://an1.com/uploads/posts/2023-12/1703095752_little-nightmares.png", link: "go:littlen" },
+  { name: "Sniper Strike", category: "accion", image: "https://an1.com/uploads/posts/2023-08/1691312316_sniper-strike.jpg", link: "go:sniperst" },
+  { name: "Car For Trade!", category: "simulacion", image: "https://an1.com/uploads/posts/2024-02/1708452259_car-for-trade.jpg", link: "go:carfor" },
+  { name: "ship simulator", category: "simulacion", image: "https://an1.com/uploads/posts/2023-11/1699785765_ship-simulator.png", link: "go:shipsimu" },
+  { name: "Score Match", category: "deporte", image: "https://an1.com/uploads/scorematchd9381g67ds.png", link: "go:scorematc" },
+  { name: "fishing look", category: "deporte", image: "https://an1.com/uploads/posts/2023-07/1688546226_fishing-hook.jpg", link: "go:fishing" },
+  { name: "Angry Birds Friends", category: "arcade", image: "https://an1.com/uploads/posts/2023-04/1682516227_angry-birds-friends.png", link: "go:angryfri" },
+  { name: "My Perfect Hotel", category: "arcade", image: "https://an1.com/uploads/posts/2023-08/1693121015_my-perfect-hotel.png", link: "go:hotelper" },
+  { name: "Shadow Of Death 2", category: "juegoderol", image: "https://an1.com/uploads/posts/2024-01/1704637415_shadow-of-death-2-awakening.jpg", link: "go:shadowdea2" },
+  { name: "Castle Crush", category: "estrategia", image: "https://an1.com/uploads/posts/2022-06/1655316659_castle-crush.jpg", link: "go:castlecr" },
+  { name: "Zombie Age 3 Premium Survival", category: "arcade", image: "https://image.winudf.com/v2/image1/Y29tLnJlZGFudHouZ2FtZS56YTNwX2ljb25fMTU2NDQ4ODM4MV8wMTU/icon.png?w=184&fakeurl=1", link: "go:zoage3pr" },
+  { name: "Garten of Banban 2", category: "aventura", image: "https://an1.com/uploads/posts/2023-04/1681054649_garten-of-banban-2.png", link: "go:banban2" },
+  { name: "Robbery Bob", category: "accion", image: "https://an1.com/uploads/posts/2023-03/1679065122_robbery-bob.png", link: "go:robebob" },
+  { name: "Helicopter Escape 3D", category: "accion", image: "https://an1.com/uploads/hellcopter45rt.png", link: "go:helices3" },
+  { name: "Youtubers Life", category: "simulacion", image: "https://an1.com/uploads/posts/2022-09/1662136376_youtuberslife.png", link: "go:tuberlife" },
+  { name: "Survivalcraft 2", category: "arcade", image: "https://an1.com/uploads/surthrthrtgredg.png", link: "go:survialcra" },
+  { name: "Grand Theft Auto: Chinatown Wars", category: "accion", image: "https://an1.com/uploads/grtehgrtheht.png", link: "go:gtachina" },
+  { name: "Grand Theft Auto: Vice City", category: "accion", image: "https://an1.com/uploads/posts/2023-04/1680953248_gtavc.png", link: "go:gtavice" },
+    { name: "Five Nights at Freddy's 5: Sister Location", category: "terror", image: "https://an1.com/uploads/posts/2021-12/1640710654_fnaf5.png", link: "go:five5" },
+  { name: "Five Nights at Freddy's 4", category: "terror", image: "https://an1.com/uploads/posts/2021-12/1640611182_fnaf4.jpg", link: "go:five4" },
+  { name: "Five Nights at Freddy's 3", category: "terror", image: "https://an1.com/uploads/faoveirn56rty567.png", link: "go:five33" },
+  { name: "Five Nights at Freddy's 2", category: "terror", image: "https://an1.com/uploads/posts/2023-10/1696254774_five-nights-at-freddy-2.png", link: "go:five22" },
+  { name: "Ultimate Custom Night", category: "terror", image: "https://an1.com/uploads/ultimate45cty5.png", link: "go:ultimatecu" }
+];
+
+// =====================
+// 🏠 PÁGINA PRINCIPAL (index.html)
+// =====================
+if (document.getElementById("updated") || document.getElementById("new") || document.getElementById("popular")) {
+  const sections = {
+    updated: document.getElementById("updated"),
+    new: document.getElementById("new"),
+    popular: document.getElementById("popular")
+  };
+
+  // 🧱 Renderizar solo los juegos con "sections"
+  games.forEach(g => {
+    if (!g.sections) return;
+
+    // 🏷️ Detectar etiqueta MOD o FREE
+    let badge = "";
+    if (g.tag === "mod") badge = '<span class="game-badge">MOD</span>';
+    else if (g.tag === "free") badge = '<span class="game-badge free">FREE</span>';
+
+    // 💬 Burbuja del mod (en vez de la categoría)
+    const modBubble = g.mod ? `<div class="category-bubble-green">${g.mod}</div>` : "";
+
+    g.sections.forEach(sec => {
+      const target = sections[sec];
+      if (target) {
+        const card = document.createElement("a");
+        card.href = g.link;
+        card.className = "game-card";
+        card.innerHTML = `
+          ${badge}
+          <img src="${g.image}" alt="${g.name}">
+          <p>${g.name}</p>
+          ${modBubble}
+        `;
+        target.appendChild(card);
+      }
+    });
+  });
+
+  // 🎮 Menú lateral
+  const menuBtn = document.getElementById("menuBtn");
+  const menu = document.getElementById("menu");
+  if (menuBtn && menu) {
+    menuBtn.addEventListener("click", () => {
+      menu.classList.toggle("open");
+      menuBtn.classList.toggle("open");
+    });
+    document.addEventListener("click", (e) => {
+      if (!menu.contains(e.target) && !menuBtn.contains(e.target)) {
+        menu.classList.remove("open");
+        menuBtn.classList.remove("open");
+      }
+    });
+  }
+
+  // 🔍 Buscador modal
+  const searchIcon = document.getElementById("searchIcon");
+  const searchModal = document.getElementById("searchModal");
+  const searchInput = document.getElementById("modalSearchInput");
+  const searchResults = document.getElementById("searchResults");
+
+  if (searchIcon && searchModal && searchInput && searchResults) {
+    searchIcon.addEventListener("click", () => {
+      searchModal.style.display = "flex";
+      searchInput.focus();
+      showSuggestions();
+    });
+
+    searchModal.addEventListener("click", (e) => {
+      if (e.target === searchModal) {
+        searchModal.style.display = "none";
+        searchResults.innerHTML = "";
+        searchInput.value = "";
+      }
+    });
+
+    searchInput.addEventListener("input", () => {
+      const term = searchInput.value.toLowerCase();
+      if (term.trim() === "") {
+        showSuggestions();
+        return;
+      }
+
+      const filtered = games.filter(g =>
+        g.name.toLowerCase().includes(term) ||
+        (g.category && g.category.toLowerCase().includes(term)) ||
+        (g.mod && g.mod.toLowerCase().includes(term))
+      );
+
+      renderResults(filtered.slice(0, 10), "Resultados de búsqueda 🔍");
+    });
+
+    function showSuggestions() {
+      renderResults(games.slice(0, 5), "🎮 Sugerencias");
+    }
+
+    function renderResults(list, labelText) {
+      searchResults.innerHTML = `<div class="results-bubble">${labelText}</div>`;
+      if (list.length === 0) {
+        searchResults.innerHTML += "<p style='padding:10px;text-align:center;color:#999;'>Sin resultados...</p>";
+        return;
+      }
+
+      list.forEach(g => {
+        const item = document.createElement("div");
+        item.className = "result-item";
+
+        // 🏷️ Etiqueta MOD/FREE
+        let tagHTML = "";
+        if (g.tag === "mod") tagHTML = `<div class="tag-bubble mod">MOD</div>`;
+        else if (g.tag === "free") tagHTML = `<div class="tag-bubble free">FREE</div>`;
+
+        // 💬 Burbujas del mod (verde-azul) y categoría (roja)
+        const modBubble = g.mod ? `<div class='category-bubble-green'>${g.mod}</div>` : "";
+        const categoryBubble = g.category ? `<div class='category-bubble-red'>${g.category}</div>` : "";
+
+        item.innerHTML = `
+          <img src="${g.image}">
+          <div class='result-info'>
+            <strong>${g.name}</strong>
+            <div class="bubble-row">
+              ${modBubble}
+              ${categoryBubble}
+              ${tagHTML}
+            </div>
+          </div>`;
+        item.onclick = () => window.location.href = g.link;
+        searchResults.appendChild(item);
+      });
+    }
+  }
+}
+
+// =====================
+// 🌐 PÁGINA TODOS LOS JUEGOS (todos.html)
+// =====================
+document.addEventListener("DOMContentLoaded", () => {
+  const grid = document.getElementById("gamesGrid");
+  if (!grid) return;
+
+  const searchInput = document.getElementById("searchInput");
+  const filterBtn = document.getElementById("filterBtn");
+  const filterModal = document.getElementById("filterModal");
+  const filterList = document.getElementById("filterList");
+  const closeFilter = document.getElementById("closeFilter");
+
+  let activeCategory = null;
+  const categories = [...new Set(games.map(g => g.category))];
+
+  function renderGames(list) {
+    grid.innerHTML = "";
+    if (list.length === 0) {
+      grid.innerHTML = `<p style="grid-column:1/-1;text-align:center;color:#999;">No se encontraron juegos...</p>`;
+      return;
+    }
+
+    list.forEach(g => {
+      let badge = "";
+      if (g.tag === "mod") badge = '<span class="game-badge">MOD</span>';
+      else if (g.tag === "free") badge = '<span class="game-badge free">FREE</span>';
+
+      const card = document.createElement("a");
+      card.href = g.link;
+      card.className = "game-card";
+      card.innerHTML = `
+        ${badge}
+        <img src="${g.image}" alt="${g.name}">
+        <div class="game-info">
+          <div class="game-name" title="${g.name}">${g.name}</div>
+          <div class="game-category">${g.category}</div>
+        </div>`;
+      grid.appendChild(card);
+    });
+  }
+
+  function applyFilters() {
+    const term = searchInput?.value.toLowerCase() || "";
+    let filtered = games;
+
+    if (activeCategory) {
+      filtered = filtered.filter(g => g.category === activeCategory);
+    }
+
+    if (term.trim() !== "") {
+      filtered = filtered.filter(
+        g =>
+          g.name.toLowerCase().includes(term) ||
+          (g.category && g.category.toLowerCase().includes(term)) ||
+          (g.mod && g.mod.toLowerCase().includes(term))
+      );
+    }
+
+    renderGames(filtered);
+  }
+
+  renderGames(games);
+
+  if (searchInput) {
+    searchInput.addEventListener("input", applyFilters);
+  }
+
+  if (filterBtn && filterModal && closeFilter && filterList) {
+    filterBtn.addEventListener("click", () => {
+      filterModal.style.display = "flex";
+    });
+
+    closeFilter.addEventListener("click", () => {
+      filterModal.style.display = "none";
+      activeCategory = null;
+      applyFilters();
+    });
+
+    categories.forEach(cat => {
+      const btn = document.createElement("button");
+      btn.textContent = cat;
+      btn.addEventListener("click", () => {
+        activeCategory = cat;
+        filterModal.style.display = "none";
+        applyFilters();
+      });
+      filterList.appendChild(btn);
+    });
+  }
+});
